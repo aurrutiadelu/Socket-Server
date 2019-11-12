@@ -3,11 +3,11 @@ import Server from "./clases/server";
 import { router } from './routes/router';
 import bodyParser, { urlencoded } from 'body-parser';
 import cors from 'cors';
+import './clases/database';//Inicializa la conexion a MongoDb
 
 
- const server = new Server()
 
-
+ const server = Server.instance;
 
  //Antes de la rutas usar el body parser
  server.app.use( bodyParser.urlencoded({extended:true}));// middleware para coger datos de Post-Man
